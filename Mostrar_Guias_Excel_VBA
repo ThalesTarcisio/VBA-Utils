@@ -1,0 +1,7 @@
+Sub MostrarGuias()
+    If ActiveWindow.DisplayWorkbookTabs Then
+        ActiveWindow.DisplayWorkbookTabs = False
+    Else
+        ActiveWindow.DisplayWorkbookTabs = True
+    End If
+End Sub
