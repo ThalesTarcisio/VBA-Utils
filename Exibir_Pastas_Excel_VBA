@@ -1,7 +1,10 @@
+'-----THALES TARCÍSIO ARAGÃO ALMEIDA-----
+'--------------29/08/2019----------------
+
 Sub Exibepastas()
     Dim pasta As Worksheet
-    
+    'Go trought all the worksheets and, if it's hidden, it'll be shown
     For Each pasta In ActiveWorkbook.Worksheets
         pasta.Visible = xlSheetVisible
-    Next c
+    Next pasta
 End Sub
