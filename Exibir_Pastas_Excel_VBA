@@ -1,0 +1,7 @@
+Sub Exibepastas()
+    Dim pasta As Worksheet
+    
+    For Each pasta In ActiveWorkbook.Worksheets
+        pasta.Visible = xlSheetVisible
+    Next c
+End Sub
