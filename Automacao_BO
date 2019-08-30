@@ -1,0 +1,27 @@
+Sub Auto_Extrair_Base()
+
+Dim appBO As busobj.Application
+Set appBO = CreateObject("BusinessObjects.Application")
+
+appBO.LoginAs "794039727", "Senha2019", 0, "bomain"
+appBO.Interactive = False
+appBO.Visible = False
+
+Set docBo = appBO.Documents.Open("\\10.252.24.128\d\OPER\Planejamento\Thales\Pesq_Satisfacao_2019_New_Att.rep")
+
+'docBO.Reports("Tab").Activate
+'docBO.Variables
+docBo.Variables(1).Value = Format(Date - 1, "dd/mm/yyyy")
+docBo.Variables(2).Value = Format(Date - 1, "dd/mm/yyyy") & "23:59:59"
+docBo.Variables(3).Value = Format(Date - 1, "dd/mm/yyyy") & "00:00:01"
+docBo.Refresh
+
+'docBO.Save
+
+docBo.SaveAs "C:\Docs\teste.txt"
+    
+'appBO.Interactive = True
+
+docBo.Close (False)
+
+End Sub
